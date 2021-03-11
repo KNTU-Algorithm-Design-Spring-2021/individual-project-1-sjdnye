@@ -11,14 +11,15 @@ public class Main {
             x[i] = scanner.nextInt();
             y[i] = scanner.nextInt();
         }
-        restrictiveRectangle(x);
-        restrictiveRectangle(y);
+       int[] x_rectangle =  restrictiveRectangle(x);
+       int[] y_rectangle =  restrictiveRectangle(y);
 
 
     }
 
     
-    public static void restrictiveRectangle(int[] array){
+    public static int[] restrictiveRectangle(int[] array){
+        int[] z = new int[2];
         int middle = array.length/2;
         int[] array_left = new int[middle];
         int[] array_right = new int[array.length-middle];
@@ -30,6 +31,21 @@ public class Main {
         }
         mergeSort(array_left);
         mergeSort(array_right);
+
+        if (array_left[0] < array_right[0]){
+            z[0] = array_left[0];
+        }
+        else {
+            z[0]  = array_right[0];
+        }
+
+        if (array_left.length-1 < array_right.length-1){
+            z[1] = array_right[array_right.length-1];
+        }
+        else{
+            z[1] = array_left[array_left.length-1];
+        }
+        return z;
     }
 
 
