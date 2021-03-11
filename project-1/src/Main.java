@@ -11,10 +11,26 @@ public class Main {
             x[i] = scanner.nextInt();
             y[i] = scanner.nextInt();
         }
+        restrictiveRectangle(x);
+        restrictiveRectangle(y);
+
+
     }
 
     
-
+    public static void restrictiveRectangle(int[] array){
+        int middle = array.length/2;
+        int[] array_left = new int[middle];
+        int[] array_right = new int[array.length-middle];
+        for (int i = 0; i < middle; i++) {
+            array_left[i] = array[i];
+        }
+        for (int i = middle; i < array.length; i++) {
+            array_right[i - middle] = array[i];
+        }
+        mergeSort(array_left);
+        mergeSort(array_right);
+    }
 
 
 
