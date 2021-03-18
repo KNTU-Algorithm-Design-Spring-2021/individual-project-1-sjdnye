@@ -14,6 +14,18 @@ public class Main {
        int[] x_rectangle =  restrictiveRectangle(x);
        int[] y_rectangle =  restrictiveRectangle(y);
 
+        System.out.println("minimum of x is: "+ x_rectangle[0]);
+        System.out.println("maximum of x is: "+ x_rectangle[1]);
+        System.out.println("minimum of y is: "+ y_rectangle[0]);
+        System.out.println("maximum of y is: "+ y_rectangle[1]);
+        System.out.println("------------------------------------");
+
+        System.out.println("the length of rectangle is:"+ (x_rectangle[1] -  x_rectangle[0]));
+        System.out.println("the width of rectangle is:"+ (y_rectangle[1] -  y_rectangle[0]));
+        System.out.println("the area of rectangle is:"+( (x_rectangle[1] -  x_rectangle[0]) * (y_rectangle[1] -  y_rectangle[0])));
+
+
+
 
     }
 
